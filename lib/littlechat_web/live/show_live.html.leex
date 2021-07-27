@@ -1,0 +1,13 @@
+<section class="phx-hero">
+  <h1><%= @room.title %></h1>
+  <h3>Connected Users:</h3>
+  <ul>
+    <%= for uuid <- @connected_users do %>
+      <li><%= uuid %></li>
+    <% end %>
+  </ul>
+
+  <video id="local-video" playsinline autoplay muted width="600"></video>
+
+  <button id="join_call" class="button" phx-hook="JoinCall">Join Call</button>
+</section>

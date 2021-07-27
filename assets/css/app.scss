@@ -1,6 +1,10 @@
 /* This file is for your main application css. */
 @import './phoenix.css';
 
+video {
+  max-width: 100%;
+}
+
 #local-video {
   transform: rotateY(180deg);
 }

@@ -5,22 +5,6 @@ defmodule LittlechatWeb.Room.NewLive do
   alias Littlechat.Room
 
   @impl true
-  def render(assigns) do
-    ~L"""
-    <h1>Create a New Room</h1>
-    <div>
-      <%= form_for @changeset, "#", [phx_change: "validate", phx_submit: "save"], fn f -> %>
-        <%= text_input f, :title, placeholder: "Title" %>
-        <%= error_tag f, :title %>
-        <%= text_input f, :slug, placeholder: "room-slug" %>
-        <%= error_tag f, :slug %>
-        <%= submit "Save" %>
-      <% end %>
-    </div>
-    """
-  end
-
-  @impl true
   def mount(_params, _session, socket) do
     {:ok,
       socket

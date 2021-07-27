@@ -36,32 +36,31 @@ async function initStream() {
   }
 }
 
-let Hooks = {};
-Hooks.JoinCall = {
-  mounted() {
-    // try {
-    //   // Gets our local media from the browser and stores it as a const, stream.
-    navigator.mediaDevices.getUserMedia({
-      audio: true,
-      video: true,
-      width: '1280',
-    });
-
-    navigator.getUserMedia(
-      {
+let Hooks = {
+  JoinCall: {
+    mounted: () => {
+      navigator.mediaDevices.getUserMedia({
         audio: true,
         video: true,
         width: '1280',
-      },
-      (localMediaStream) => {
-        const video = document.getElementById('local-video');
-        video.srcObject = localMediaStream;
-        //video.src = window.URL.createObjectURL(localMediaStream);
-      },
-      (e) => {
-        console.error(e);
-      }
-    );
+      });
+
+      navigator.getUserMedia(
+        {
+          audio: true,
+          video: true,
+          width: '1280',
+        },
+        (localMediaStream) => {
+          const video = document.getElementById('local-video');
+          video.srcObject = localMediaStream;
+          //video.src = window.URL.createObjectURL(localMediaStream);
+        },
+        (e) => {
+          console.error(e);
+        }
+      );
+    },
   },
 };
 

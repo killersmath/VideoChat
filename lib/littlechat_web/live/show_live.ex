@@ -12,25 +12,6 @@ defmodule LittlechatWeb.Room.ShowLive do
   alias Littlechat.PubSub
   alias Phoenix.Socket.Broadcast
 
-
-  @impl true
-  def render(assigns) do
-    ~L"""
-    <h1><%= @room.title %></h1>
-    <h3>Connected Users:</h3>
-    <ul>
-    <%= for uuid <- @connected_users do %>
-      <li><%= uuid %></li>
-    <% end %>
-    </ul>
-
-    <video id="local-video" playsinline autoplay muted width="600"></video>
-
-    <button id="join_call" class="button" phx-hook="JoinCall">Join Call</button>
-    """
-  end
-
-
   @impl true
   def mount(%{"slug" => slug}, _session, socket) do
     track_key = "room:" <> slug
