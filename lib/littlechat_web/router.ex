@@ -20,6 +20,7 @@ defmodule LittlechatWeb.Router do
     live "/", PageLive, :index
 
     scope "/room", Room do
+      live "/", ListLive, :index
       live "/new", NewLive, :new
       live "/show/:slug", ShowLive, :show
     end

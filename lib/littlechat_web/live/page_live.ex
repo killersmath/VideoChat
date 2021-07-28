@@ -16,7 +16,6 @@ defmodule LittlechatWeb.PageLive do
     case search(query) do
       %{^query => vsn} ->
         {:noreply, redirect(socket, external: "https://hexdocs.pm/#{query}/#{vsn}")}
-
       _ ->
         {:noreply,
          socket

@@ -1,14 +1,6 @@
 /* This file is for your main application css. */
 @import './phoenix.css';
 
-video {
-  max-width: 100%;
-}
-
-#local-video {
-  transform: rotateY(180deg);
-}
-
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,
 .phx-no-feedback .invalid-feedback {
@@ -94,4 +86,45 @@ video {
   color: #a94442;
   display: block;
   margin: -1rem 0 2rem;
+}
+
+video {
+  max-width: 100%;
+}
+
+#local-video {
+  transform: rotateY(180deg);
+}
+
+.room-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  //align-items: center;
+  //justify-content: center;
+}
+
+.room-item {
+  width: 100%;
+  display: flex;
+
+  margin-bottom: 20px;
+
+  &--title {
+    flex: 1 1 100%;
+  }
+
+  &--slug {
+    flex: 1 1 100%;
+  }
+
+  &--link {
+    a {
+      color: #fff;
+      padding: 0.5rem 2rem;
+      border-radius: 4px;
+      background-color: hsl(219, 89%, 55%);
+      box-shadow: 2px 3px 3px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
 }

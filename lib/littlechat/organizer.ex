@@ -3,6 +3,7 @@ defmodule Littlechat.Organizer do
 
   alias Littlechat.Repo
   alias Littlechat.Organizer.Room
+
   def list_rooms do
     Repo.all(Room)
   end
@@ -11,4 +12,5 @@ defmodule Littlechat.Organizer do
     from(room in Room, where: room.slug == ^slug)
     |> Repo.one()
   end
+
 end

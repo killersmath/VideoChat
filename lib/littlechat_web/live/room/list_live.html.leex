@@ -1,0 +1,22 @@
+<section class="phx-hero">
+  <h1>Room List</h1>
+  <div class="room-container">
+    <%= if assigns[:rooms] != nil and length(@rooms) > 0 do %>
+      <%= for room  <- @rooms do %>
+        <div class="room-item">
+          <div class="room-item--title">
+            <%= room.title %>
+          </div>
+          <div class="room-item--slug">
+            <%= room.slug %>
+          </div>
+          <div class="room-item--link">
+            <%= link "Entrar", to: Routes.show_path(@socket, :show, room.slug) %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>There is no room to fetch!</p>
+    <% end %>
+  </div>
+</section>
